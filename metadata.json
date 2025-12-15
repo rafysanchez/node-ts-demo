@@ -1,0 +1,5 @@
+{
+  "name": "node-ts-products-api",
+  "description": "A simple REST API in Node.js + TypeScript with CRUD for products, using in-memory persistence and Zod validation.",
+  "requestFramePermissions": []
+}
