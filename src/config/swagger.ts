@@ -1,14 +1,14 @@
 import swaggerJsdoc from 'swagger-jsdoc';
 import path from 'path';
-import { fileURLToPath } from 'url';
 
-// Fix for __dirname in ESM environments
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// Fix for "Cannot find name '__dirname'" error in TypeScript when types are missing
+declare const __dirname: string;
 
 // Helper to normalize paths (fixes Windows backslash issues in globs)
 const normalizePath = (p: string) => p.replace(/\\/g, '/');
 
+// Since tsconfig is set to "commonjs", __dirname is globally available.
+// We should NOT use import.meta.url here.
 const baseDir = path.join(__dirname, '..');
 
 const options: swaggerJsdoc.Options = {
