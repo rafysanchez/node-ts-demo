@@ -4,7 +4,7 @@
   "description": "Simple REST API with Node.js, TypeScript and Express",
   "main": "dist/server.js",
   "scripts": {
-    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "dev": "node node_modules/ts-node-dev/lib/bin.js --respawn --transpile-only src/server.ts",
     "build": "rimraf dist && tsc",
     "start": "node dist/server.js",
     "lint": "eslint . --ext .ts",
